@@ -446,6 +446,228 @@ _Problem Statement: Find the reviews of products along with the product name (Ri
 select B.ProductID, B.Comments, A.Name from Production.Product AS A
 RIGHT JOIN Production.ProductReview AS B 
 ON A.ProductID = B.ProductID
+   </pre>
 
 ![](20c.JPG)
+
+### Scenario 21: Select all records from two tables when there is a match between them or not    
+
+<pre>
+select ProductID, Name, ProductSubcategoryID from Production.Product 
+  </pre>
+-- Product Table
+
+![](21a.JPG)
+
+_Problem Statement: Find the Sub-category name to which each Product belongs, 
+and also find if any Sub-category name is not assigned to a Product name_
+
+<pre>
+select ProductSubcategoryID, Name from Production.ProductSubcategory
+  </pre>
+-- Sub-category Table
+
+![](21b.JPG)
+
+<pre>
+select A.ProductID, A.Name, A.ProductSubcategoryID, B.Name from Production.Product AS A
+FULL JOIN Production.ProductSubcategory AS B 
+ON A.ProductSubcategoryID = B.ProductSubcategoryID
+   </pre>
+-- Full Join
+
+![](21c.JPG)
+
+### Scenario 22: Return the number of items found in a result set 
+
+<pre>
+select COUNT(ProductNumber) from Production.Product
+  </pre>
+
+![](22a.JPG)
+
+_Problem Statement: Check how many product Numbers are there without any duplication_
+
+<pre>
+select distinct COUNT(ProductNumber) from Production.Product
+  </pre>
+
+![](22b.JPG)
+
+### Scenario 23: Compute the total amount  
+
+<pre>
+select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
+  </pre>
+
+![](23a.JPG)
+
+_Problem Statement: Find the Total revenue from the Product 777 sold in the year 2011_
+
+<pre>
+select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
+where ProductID = 777 
+and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
+  </pre>
+
+![](23b.JPG)
+
+<pre>
+select SUM(LineTotal) from Sales.SalesOrderDetail
+where ProductID = 777 
+and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
+   </pre>
+-- Total Revenue
+
+![](23c.JPG)
+
+### Scenario 24: Compute the average value
+
+<pre>
+select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
+  </pre>
+
+![](24a.JPG)
+
+_Problem Statement: Find the Average Price on which the Product 777 got sold in 2011_
+
+<pre>
+select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
+where ProductID = 777
+and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
+  </pre>
+
+![](24b.JPG)
+
+<pre>
+select AVG(LineTotal) from Sales.SalesOrderDetail
+where ProductID = 777
+and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
+   </pre>
+-- Average
+
+![](24c.JPG)
+
+### Scenario 25: Compute the lowest value  
+_Problem Statement: Check how many product Numbers are there without any duplication_
+
+<pre>
+select * from Production.ProductInventory
+where ProductID = 944
+  </pre>
+
+![](25a.JPG)
+
+<pre>
+select MIN(Quantity) from Production.ProductInventory
+where ProductID = 944
+  </pre>
+
+![](25b.JPG)
+
+### Scenario 26: Compute the largest value   
+_Problem Statement: Find the largest quantity in stock for the ProductID 747_
+
+<pre>
+select * from Production.ProductInventory
+where ProductID = 747
+  </pre>
+
+![](26a.JPG)
+
+<pre>
+select MAX(Quantity) from Production.ProductInventory
+where ProductID = 747
+  </pre>
+
+![](26b.JPG)
+
+### Scenario 27: Combine values from two columns into one column     
+
+<pre>
+select StateProvinceID, StateProvinceCode, Name from Person.StateProvince
+  </pre>
+
+![](27a.JPG)
+
+_Problem Statement: Display State Code and State Name in this format: State Code-State Name.
+Example: for State Code-AK and State Name- Alaska, need to display as 'Ak-Alaska'_
+
+<pre>
+select StateProvinceID, CONCAT(StateProvinceCode, '-', Name) from Person.StateProvince
+   </pre>
+
+![](27b.JPG)
+
+<pre>
+select StateProvinceID, CONCAT(StateProvinceCode, '-', Name) AS State from Person.StateProvince
+   </pre>
+-- Using 'State' as the column name
+
+![](27c.JPG)
+
+### Scenario 28: Create a calculated field   
+
+<pre>
+select ProductID, UnitPrice, OrderQty, LineTotal, RejectedQty from Purchasing.PurchaseOrderDetail
+  </pre>
+
+![](28a.JPG)
+
+_Problem Statement: Find the Amount lost due to the rejected quantity_
+
+<pre>
+select ProductID,
+       UnitPrice,
+       OrderQty,
+       LineTotal,
+       RejectedQty,
+       (UnitPrice * RejectedQty) AS LossAmount
+from Purchasing.PurchaseOrderDetail
+  </pre>
+
+![](28b.JPG)
+
+### Scenario 29: Arrange rows in groups   
+
+<pre>
+select ProductID, Quantity from Production.ProductInventory
+  </pre>
+
+![](29a.JPG)
+
+_Problem Statement: Find the lowest Quantity for each ProductID in the Inventory_
+
+<pre>
+select ProductID, MIN(Quantity) AS MinQuantity from Production.ProductInventory
+GROUP BY ProductID 
+  </pre>
+
+![](29b.JPG)
+
+### Scenario 30: Filter Groups based on condition   
+
+<pre>
+select ProductID, Quantity, LocationID from Production.ProductInventory
+  </pre>
+
+![](30a.JPG)
+
+_Problem Statement: If the location 'LocationID' is less than 3 for a ProductID,
+then we need to find the lowest stock quantity 'Quantity' for only that ProductID_
+
+<pre>
+select ProductID,
+       MIN(Quantity) AS MinCount,
+       COUNT(LocationID) AS Locations 
+from Production.ProductInventory
+GROUP BY ProductID
+HAVING COUNT(LocationID) < 3
+  </pre>
+
+![](30b.JPG)
+
+## Conclusion
+In conclusion, SQL is a powerful tool for data analysts to manage and analyze data. By mastering SQL and understanding various scenarios, data analysts can efficiently retrieve, manipulate, and transform data to derive valuable insights. Whether it is querying databases, aggregating data, or performing complex calculations, SQL provides the necessary capabilities to handle diverse data analysis tasks.  
+By continuously honing their SQL skills, data analysts can become more proficient in their work and contribute to making informed business decisions based on data-driven insights.
 
