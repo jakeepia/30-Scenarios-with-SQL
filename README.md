@@ -1,6 +1,6 @@
 # 30 Scenarios with SQL
 
-![](Intro.png)
+![](Images/Intro.png)
 
 ## Introduction
 As a data analyst, SQL (Structured Query Language) is an essential tool for managing and analyzing data. SQL allows data analysts to retrieve, manipulate, and transform data stored in databases. In this project, I will explore some common SQL scenarios that data analysts frequently encounter in their work. By understanding these scenarios, data analysts can effectively utilize SQL to extract valuable insights from large datasets and make data-driven decisions.
@@ -19,7 +19,7 @@ select * from Person.CountryRegion
 order by Name ASC
   </pre>
 
-![](1a.JPG)
+![](Images/1a.JPG)
 
 _Problem Statement: Order the 'country names' in descending order from Z-A_  
 
@@ -28,7 +28,7 @@ select * from Person.CountryRegion
 order by Name DESC
   </pre>
 
-![](1b.JPG)
+![](Images/1b.JPG)
 
 ### Scenario 2: Sort a result set by an expression  
 _Problem Statement: List the "comments with more words" to get more insight about a product_
@@ -39,7 +39,7 @@ from Production.ProductReview
 order by len(Comments) DESC  
   </pre>
 
-![](2.JPG)
+![](Images/2.JPG)
 
 ### Scenario 3: Retrieve 10% of the result set    
 
@@ -49,7 +49,7 @@ from Production.TransactionHistory
   </pre>
 --113,443 rows returned * 10% = 11,345
 
-![](3a.JPG)
+![](Images/3a.JPG)
 
 _Problem Statement: Display only the first 10% rows_
 
@@ -60,7 +60,7 @@ from Production.TransactionHistory
   </pre>
 --11,345 rows returned
 
-![](3b.JPG)
+![](Images/3b.JPG)
 
 ### Scenario 4: Retrieve distinct values in a column 
 
@@ -72,7 +72,7 @@ select * from Sales.CreditCard
 select CardType from Sales.CreditCard
   </pre>
 
-![](4a.JPG)
+![](Images/4a.JPG)
 
 _Problem Statement: Find the total Card Types without any duplication_
 
@@ -80,7 +80,7 @@ _Problem Statement: Find the total Card Types without any duplication_
 select distinct CardType from Sales.CreditCard
   </pre>
 
-![](4b.JPG)
+![](Images/4b.JPG)
 
 ### Scenario 5: Return values based on one condition  
 
@@ -88,7 +88,7 @@ select distinct CardType from Sales.CreditCard
 select ProductID, ReviewerName, Rating from Production.ProductReview
   </pre>
 
-![](5a.JPG)
+![](Images/5a.JPG)
 
 _Problem Statement: Display the output to be more understandable (1=Poor, 2=Fair, 3=Good, 4=Very Good, 5=Excellent)_
 
@@ -104,7 +104,7 @@ select ProductID, ReviewerName,
 from Production.ProductReview  
   </pre>
 
-![](5b.JPG)
+![](Images/5b.JPG)
 
 ### Scenario 6: Replace NULL values with specific values 
 
@@ -113,7 +113,7 @@ select BillOfMaterialsID, ProductAssemblyID, StartDate
 from Production.BillOfMaterials
   </pre>
 
-![](6a.JPG)
+![](Images/6a.JPG)
 
 _Problem Statement: Instead of NULL values we need to have value 0 for 'ProductAssemblyID' column "without changing any value" in the table_
 
@@ -124,7 +124,7 @@ select BillOfMaterialsID,
 from Production.BillOfMaterials
   </pre>
   
-![](6b.JPG)
+![](Images/6b.JPG)
 
 ### Scenario 7: Replacing the table or column name temporarily 
 
@@ -133,7 +133,7 @@ select ProductModelID, ProductDescriptionID
 from Production.ProductModelProductDescriptionCulture
   </pre>
 
-![](7a.JPG)
+![](Images/7a.JPG)
 
 _Problem Statement: Name columns and table name with an Alias_
 
@@ -143,7 +143,7 @@ select ProductModelID AS ID,
 from Production.ProductModelProductDescriptionCulture AS Table1
   </pre>
 
-![](7b.JPG)
+![](Images/7b.JPG)
 
 ### Scenario 8: Filtering out information  
 
@@ -151,7 +151,7 @@ from Production.ProductModelProductDescriptionCulture AS Table1
 select * from Person.AddressType
   </pre>
 
-![](8a.JPG)
+![](Images/8a.JPG)
 
 _Problem Statement: Filter out rows that has the name 'Archive' from the display_
 
@@ -160,7 +160,7 @@ select * from Person.AddressType
 where NOT Name = 'Archive'
   </pre>
 
-![](8b.JPG)
+![](Images/8b.JPG)
 
 ### Scenario 9: Filtering on more than 1 condition   
 
@@ -168,7 +168,7 @@ where NOT Name = 'Archive'
 select * from Purchasing.PurchaseOrderDetail
   </pre>
 
-![](9a.JPG)
+![](Images/9a.JPG)
 
 _Problem Statement: Find all purchase order for the ProductID = 512 that costs less than $35 unit price_
 
@@ -177,7 +177,7 @@ select * from Purchasing.PurchaseOrderDetail
 where ProductID = 512 AND UnitPrice <35
   </pre>
 
-![](9b.JPG)
+![](Images/9b.JPG)
 
 ### Scenario 10: Search within a range of values  
 
@@ -185,7 +185,7 @@ where ProductID = 512 AND UnitPrice <35
 select Name, ProductNumber, ListPrice from Production.Product
   </pre>
 
-![](10a.JPG)
+![](Images/10a.JPG)
 
 _Problem Statement: Find the name of products that has a list price in the range of $10-$20_
 
@@ -194,7 +194,7 @@ select Name, ProductNumber, ListPrice from Production.Product
 where ListPrice BETWEEN 10 AND 20
   </pre>
 
-![](10b.JPG)
+![](Images/10b.JPG)
 
 ### Scenario 11: Filtering out data by comparing values  
 
@@ -211,21 +211,21 @@ select * from Production.WorkOrder
 where ProductID = 995
   </pre>
 
-![](11a.JPG)
+![](Images/11a.JPG)
 
 <pre>
 select * from Production.WorkOrder
 where ProductID = 995 AND OrderQty > 500
   </pre>
 
-![](11b.JPG)
+![](Images/11b.JPG)
 
 <pre>
 select * from Production.WorkOrder
 where ProductID = 995 AND OrderQty > 500 AND StartDate < '2013-05-03'
   </pre>
 
-![](11c.JPG)
+![](Images/11c.JPG)
 
 ### Scenario 12: Finding rows based on a list of values  
 
@@ -233,7 +233,7 @@ where ProductID = 995 AND OrderQty > 500 AND StartDate < '2013-05-03'
 select Name, ListPrice from Production.Product
   </pre>
 
-![](12a.JPG)
+![](Images/12a.JPG)
 
 _Problem Statement: Find the name of products that has these 3 ListPrice values: 106.50, 1003.91, 333.42_
 
@@ -242,7 +242,7 @@ select Name, ListPrice from Production.Product
 where ListPrice IN (106.50, 1003.91, 333.42)
   </pre>
 
-![](12b.JPG)
+![](Images/12b.JPG)
 
 ### Scenario 13: Finding rows based on a list of values  
 
@@ -250,7 +250,7 @@ where ListPrice IN (106.50, 1003.91, 333.42)
 select * from Person.CountryRegion
   </pre>
 
-![](13a.JPG)
+![](Images/13a.JPG)
 
 _Problem Statement: Need to find the name of the countries that start with the letter 'V'_
 
@@ -259,7 +259,7 @@ select * from Person.CountryRegion
 where Name like 'V%'
   </pre>
 
-![](13b.JPG)
+![](Images/13b.JPG)
 
 _Problem Statement: Need to find the name of the countries that start with the letter 'Vi'_
 
@@ -268,7 +268,7 @@ select * from Person.CountryRegion
 where Name like 'Vi%'
   </pre>
 
-![](13c.JPG)
+![](Images/13c.JPG)
 
 ### Scenario 14: Filtering rows having no data value in the column  
 
@@ -276,7 +276,7 @@ where Name like 'Vi%'
 select * from Production.WorkOrder
   </pre>
 
-![](14a.JPG)
+![](Images/14a.JPG)
 
 _Problem Statement: Find Work Orders that has a Scrap Reason_
 
@@ -285,7 +285,7 @@ select * from Production.WorkOrder
 where ScrapReasonID IS NOT NULL
   </pre>
 
-![](14b.JPG)
+![](Images/14b.JPG)
 
 ### Scenario 15: Filtering rows based on some values in a sub-query (look-up method)   
 
@@ -301,7 +301,7 @@ where OrderQty > 20000
   </pre>
   --Query 1
 
-![](15a.JPG)
+![](Images/15a.JPG)
 
 _Name of Products from another Table_
 
@@ -319,7 +319,7 @@ where OrderQty > 20000
   </pre>
   --Query 1 inside Query 2
 
-![](15b.JPG)
+![](Images/15b.JPG)
 
 ### Scenario 16: Return values by converting them into Upper or Lower case   
 
@@ -327,7 +327,7 @@ where OrderQty > 20000
 select Name, ProductNumber from Production.Product
   </pre>
 
-![](16a.JPG)
+![](Images/16a.JPG)
 
 _Problem Statement: The "ProductNumber" has Characters in uppercase.   
 So, Covert characters in "Name" column also in uppercase_
@@ -336,7 +336,7 @@ So, Covert characters in "Name" column also in uppercase_
 select UPPER(Name) AS Name, ProductNumber from Production.Product                         
   </pre>
 
-![](16b.JPG)
+![](Images/16b.JPG)
 
 _Converting to "ProductNumber" lowercase characters_
 
@@ -344,7 +344,7 @@ _Converting to "ProductNumber" lowercase characters_
 select Name, LOWER(ProductNumber) AS ProductNumber from Production.Product 
   </pre>
 
-![](16d.JPG)
+![](Images/16d.JPG)
 
 ### Scenario 17: Return values by extracting specific characters   
 
@@ -352,7 +352,7 @@ select Name, LOWER(ProductNumber) AS ProductNumber from Production.Product
 select Name, ProductNumber from Production.Product
   </pre>
 
-![](17a.JPG)
+![](Images/17a.JPG)
 
 _Problem Statement: Get(extract) only the 2 characters from the "ProductName" for each "Name" column_
 
@@ -361,7 +361,7 @@ select Name, LEFT(ProductNumber,2) AS ProductNumber from Production.Product
   </pre>
 -- Left function
 
-![](17b.JPG)
+![](Images/17b.JPG)
 
 _Problem Statement: Get(extract) only the 4 numbers from the "ProductName" for each "Name" column_
 
@@ -370,7 +370,7 @@ select Name, RIGHT(ProductNumber,4) AS ProductNumber from Production.Product
   </pre>
 -- Right function
 
-![](17c.JPG)
+![](Images/17c.JPG)
 
 ### Scenario 18: Select records that has matching values in two tables   
 
@@ -378,7 +378,7 @@ select Name, RIGHT(ProductNumber,4) AS ProductNumber from Production.Product
 select WorkOrderID, ProductID from Production.WorkOrder
   </pre>
 
-![](18a.JPG)
+![](Images/18a.JPG)
 
 _Problem Statement: Find the "Product Name" of each ProductID along the with the WorkOrderID_
 
@@ -387,7 +387,7 @@ select ProductID, Name from Production.Product
   </pre>
 -- Getting the Product Name
 
-![](18b.JPG)
+![](Images/18b.JPG)
 
 <pre>
 select A.WorkOrderID, A.ProductID, B.Name from Production.WorkOrder AS A
@@ -396,7 +396,7 @@ ON A.ProductID = B.ProductID
   </pre>
 -- Innner Join
 
-![](18c.JPG)
+![](Images/18c.JPG)
 
 ### Scenario 19: Select all records from first table and only the matching records from second table   
 
@@ -404,7 +404,7 @@ ON A.ProductID = B.ProductID
 select ProductID, Name from Production.Product
   </pre>
 
-![](19a.JPG)
+![](Images/19a.JPG)
 
 _Problem Statement: Find the Sales Orders for all ProductID's along with the ProductID and Name_
 
@@ -413,7 +413,7 @@ select ProductID, SalesOrderID from Sales.SalesOrderDetail
   </pre>
 -- Sales Order details
 
-![](19b.JPG)
+![](Images/19b.JPG)
 
 <pre>
 select A.ProductID, A.Name, B.SalesOrderID from Production.Product AS A
@@ -422,7 +422,7 @@ ON A.ProductID = B.ProductID
   </pre>
 -- Left Join
 
-![](19c.JPG)
+![](Images/19c.JPG)
 
 ### Scenario 20: Select all records from second table and only the matching records from first table   
 
@@ -431,14 +431,14 @@ select ProductID, Name from Production.Product
   </pre>
 -- First Table
 
-![](20a.JPG)
+![](Images/20a.JPG)
 
 <pre>
 select ProductID, Comments from Production.ProductReview
   </pre>
 -- Second Table
 
-![](20b.JPG)
+![](Images/20b.JPG)
 
 _Problem Statement: Find the reviews of products along with the product name (Right Join)_
 
@@ -448,7 +448,7 @@ RIGHT JOIN Production.ProductReview AS B
 ON A.ProductID = B.ProductID
    </pre>
 
-![](20c.JPG)
+![](Images/20c.JPG)
 
 ### Scenario 21: Select all records from two tables when there is a match between them or not    
 
@@ -457,7 +457,7 @@ select ProductID, Name, ProductSubcategoryID from Production.Product
   </pre>
 -- Product Table
 
-![](21a.JPG)
+![](Images/21a.JPG)
 
 _Problem Statement: Find the Sub-category name to which each Product belongs, 
 and also find if any Sub-category name is not assigned to a Product name_
@@ -467,7 +467,7 @@ select ProductSubcategoryID, Name from Production.ProductSubcategory
   </pre>
 -- Sub-category Table
 
-![](21b.JPG)
+![](Images/21b.JPG)
 
 <pre>
 select A.ProductID, A.Name, A.ProductSubcategoryID, B.Name from Production.Product AS A
@@ -476,7 +476,7 @@ ON A.ProductSubcategoryID = B.ProductSubcategoryID
    </pre>
 -- Full Join
 
-![](21c.JPG)
+![](Images/21c.JPG)
 
 ### Scenario 22: Return the number of items found in a result set 
 
@@ -484,7 +484,7 @@ ON A.ProductSubcategoryID = B.ProductSubcategoryID
 select COUNT(ProductNumber) from Production.Product
   </pre>
 
-![](22a.JPG)
+![](Images/22a.JPG)
 
 _Problem Statement: Check how many product Numbers are there without any duplication_
 
@@ -492,7 +492,7 @@ _Problem Statement: Check how many product Numbers are there without any duplica
 select distinct COUNT(ProductNumber) from Production.Product
   </pre>
 
-![](22b.JPG)
+![](Images/22b.JPG)
 
 ### Scenario 23: Compute the total amount  
 
@@ -500,7 +500,7 @@ select distinct COUNT(ProductNumber) from Production.Product
 select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
   </pre>
 
-![](23a.JPG)
+![](Images/23a.JPG)
 
 _Problem Statement: Find the Total revenue from the Product 777 sold in the year 2011_
 
@@ -510,7 +510,7 @@ where ProductID = 777
 and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
   </pre>
 
-![](23b.JPG)
+![](Images/23b.JPG)
 
 <pre>
 select SUM(LineTotal) from Sales.SalesOrderDetail
@@ -519,7 +519,7 @@ and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
    </pre>
 -- Total Revenue
 
-![](23c.JPG)
+![](Images/23c.JPG)
 
 ### Scenario 24: Compute the average value
 
@@ -527,7 +527,7 @@ and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
 select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
   </pre>
 
-![](24a.JPG)
+![](Images/24a.JPG)
 
 _Problem Statement: Find the Average Price on which the Product 777 got sold in 2011_
 
@@ -537,7 +537,7 @@ where ProductID = 777
 and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
   </pre>
 
-![](24b.JPG)
+![](Images/24b.JPG)
 
 <pre>
 select AVG(LineTotal) from Sales.SalesOrderDetail
@@ -546,7 +546,7 @@ and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
    </pre>
 -- Average
 
-![](24c.JPG)
+![](Images/24c.JPG)
 
 ### Scenario 25: Compute the lowest value  
 _Problem Statement: Check how many product Numbers are there without any duplication_
@@ -556,14 +556,14 @@ select * from Production.ProductInventory
 where ProductID = 944
   </pre>
 
-![](25a.JPG)
+![](Images/25a.JPG)
 
 <pre>
 select MIN(Quantity) from Production.ProductInventory
 where ProductID = 944
   </pre>
 
-![](25b.JPG)
+![](Images/25b.JPG)
 
 ### Scenario 26: Compute the largest value   
 _Problem Statement: Find the largest quantity in stock for the ProductID 747_
@@ -573,14 +573,14 @@ select * from Production.ProductInventory
 where ProductID = 747
   </pre>
 
-![](26a.JPG)
+![](Images/26a.JPG)
 
 <pre>
 select MAX(Quantity) from Production.ProductInventory
 where ProductID = 747
   </pre>
 
-![](26b.JPG)
+![](Images/26b.JPG)
 
 ### Scenario 27: Combine values from two columns into one column     
 
@@ -588,7 +588,7 @@ where ProductID = 747
 select StateProvinceID, StateProvinceCode, Name from Person.StateProvince
   </pre>
 
-![](27a.JPG)
+![](Images/27a.JPG)
 
 _Problem Statement: Display State Code and State Name in this format: State Code-State Name.
 Example: for State Code-AK and State Name- Alaska, need to display as 'Ak-Alaska'_
@@ -597,14 +597,14 @@ Example: for State Code-AK and State Name- Alaska, need to display as 'Ak-Alaska
 select StateProvinceID, CONCAT(StateProvinceCode, '-', Name) from Person.StateProvince
    </pre>
 
-![](27b.JPG)
+![](Images/27b.JPG)
 
 <pre>
 select StateProvinceID, CONCAT(StateProvinceCode, '-', Name) AS State from Person.StateProvince
    </pre>
 -- Using 'State' as the column name
 
-![](27c.JPG)
+![](Images/27c.JPG)
 
 ### Scenario 28: Create a calculated field   
 
@@ -612,7 +612,7 @@ select StateProvinceID, CONCAT(StateProvinceCode, '-', Name) AS State from Perso
 select ProductID, UnitPrice, OrderQty, LineTotal, RejectedQty from Purchasing.PurchaseOrderDetail
   </pre>
 
-![](28a.JPG)
+![](Images/28a.JPG)
 
 _Problem Statement: Find the Amount lost due to the rejected quantity_
 
@@ -626,7 +626,7 @@ select ProductID,
 from Purchasing.PurchaseOrderDetail
   </pre>
 
-![](28b.JPG)
+![](Images/28b.JPG)
 
 ### Scenario 29: Arrange rows in groups   
 
@@ -634,7 +634,7 @@ from Purchasing.PurchaseOrderDetail
 select ProductID, Quantity from Production.ProductInventory
   </pre>
 
-![](29a.JPG)
+![](Images/29a.JPG)
 
 _Problem Statement: Find the lowest Quantity for each ProductID in the Inventory_
 
@@ -643,7 +643,7 @@ select ProductID, MIN(Quantity) AS MinQuantity from Production.ProductInventory
 GROUP BY ProductID 
   </pre>
 
-![](29b.JPG)
+![](Images/29b.JPG)
 
 ### Scenario 30: Filter Groups based on condition   
 
@@ -651,7 +651,7 @@ GROUP BY ProductID
 select ProductID, Quantity, LocationID from Production.ProductInventory
   </pre>
 
-![](30a.JPG)
+![](Images/30a.JPG)
 
 _Problem Statement: If the location 'LocationID' is less than 3 for a ProductID,
 then we need to find the lowest stock quantity 'Quantity' for only that ProductID_
@@ -665,7 +665,7 @@ GROUP BY ProductID
 HAVING COUNT(LocationID) < 3
   </pre>
 
-![](30b.JPG)
+![](Images/30b.JPG)
 
 ## Conclusion
 In conclusion, SQL is a powerful tool for data analysts to manage and analyze data. By mastering SQL and understanding various scenarios, data analysts can efficiently retrieve, manipulate, and transform data to derive valuable insights. Whether it is querying databases, aggregating data, or performing complex calculations, SQL provides the necessary capabilities to handle diverse data analysis tasks.  
