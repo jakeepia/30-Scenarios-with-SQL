@@ -9,7 +9,7 @@ As a data analyst, SQL (Structured Query Language) is an essential tool for mana
 
 **Tool:** _Azure Data Studio was connected to Microsoft SQL Server by launching the application, selecting "New Connection" to open the Connection pane, and entering the necessary server details and authentication credentials to establish the connection_
 
-These scenarios can range from simple data retrieval to complex data transformations and aggregations. Here are 30 scenario SQL cases that you may come across in your job:
+These scenarios can range from simple data retrieval to complex data transformations and aggregations. Here are 30 scenario SQL cases that you may come across in your job.
 
 ### Scenario 1: Sort a result set by one column in ascending or descending order 
 **Problem Statement:** Order the 'country names' in ascending order from A-Z  
