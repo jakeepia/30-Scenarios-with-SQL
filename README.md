@@ -5,14 +5,14 @@
 ## Introduction
 As a data analyst, SQL (Structured Query Language) is an essential tool for managing and analyzing data. SQL allows data analysts to retrieve, manipulate, and transform data stored in databases. In this project, I will explore some common SQL scenarios that data analysts frequently encounter in their work. By understanding these scenarios, data analysts can effectively utilize SQL to extract valuable insights from large datasets and make data-driven decisions.
 
-Sample Database: _AdventureWorks2017.bak_ 
+**Sample Database:** _AdventureWorks2017.bak_ 
 
-Tool: _Azure Data Studio_
+**Tool:** _Azure Data Studio_
 
 These scenarios can range from simple data retrieval to complex data transformations and aggregations. Here are 30 scenario SQL cases that you may come across in your job:
 
 ### Scenario 1: Sort a result set by one column in ascending or descending order 
-_Problem Statement: Order the 'country names' in ascending order from A-Z_  
+**Problem Statement:** Order the 'country names' in ascending order from A-Z  
 
 <pre>
 select * from Person.CountryRegion  
@@ -21,7 +21,7 @@ order by Name ASC
 
 ![](Images/1a.JPG)
 
-_Problem Statement: Order the 'country names' in descending order from Z-A_  
+**Problem Statement:** Order the 'country names' in descending order from Z-A  
 
 <pre>
 select * from Person.CountryRegion  
@@ -31,7 +31,7 @@ order by Name DESC
 ![](Images/1b.JPG)
 
 ### Scenario 2: Sort a result set by an expression  
-_Problem Statement: List the "comments with more words" to get more insight about a product_
+**Problem Statement:** List the "comments with more words" to get more insight about a product
 
 <pre>
 select ProductID, ReviewerName, Rating, Comments  
@@ -51,7 +51,7 @@ from Production.TransactionHistory
 
 ![](Images/3a.JPG)
 
-_Problem Statement: Display only the first 10% rows_
+**Problem Statement:** Display only the first 10% rows
 
 <pre>
 select Top 10 percent  
@@ -74,7 +74,7 @@ select CardType from Sales.CreditCard
 
 ![](Images/4a.JPG)
 
-_Problem Statement: Find the total Card Types without any duplication_
+**Problem Statement:** Find the total Card Types without any duplication
 
 <pre>
 select distinct CardType from Sales.CreditCard
@@ -90,7 +90,7 @@ select ProductID, ReviewerName, Rating from Production.ProductReview
 
 ![](Images/5a.JPG)
 
-_Problem Statement: Display the output to be more understandable (1=Poor, 2=Fair, 3=Good, 4=Very Good, 5=Excellent)_
+**Problem Statement:** Display the output to be more understandable (1=Poor, 2=Fair, 3=Good, 4=Very Good, 5=Excellent)
 
 <pre>
 select ProductID, ReviewerName,   
@@ -115,7 +115,7 @@ from Production.BillOfMaterials
 
 ![](Images/6a.JPG)
 
-_Problem Statement: Instead of NULL values we need to have value 0 for 'ProductAssemblyID' column "without changing any value" in the table_
+**Problem Statement:** Instead of NULL values we need to have value 0 for 'ProductAssemblyID' column "without changing any value" in the table
 
 <pre>
 select BillOfMaterialsID, 
@@ -135,7 +135,7 @@ from Production.ProductModelProductDescriptionCulture
 
 ![](Images/7a.JPG)
 
-_Problem Statement: Name columns and table name with an Alias_
+**Problem Statement** Name columns and table name with an Alias
 
 <pre>
 select ProductModelID AS ID, 
@@ -153,7 +153,7 @@ select * from Person.AddressType
 
 ![](Images/8a.JPG)
 
-_Problem Statement: Filter out rows that has the name 'Archive' from the display_
+**Problem Statement:** Filter out rows that has the name 'Archive' from the display
 
 <pre>
 select * from Person.AddressType
@@ -170,7 +170,7 @@ select * from Purchasing.PurchaseOrderDetail
 
 ![](Images/9a.JPG)
 
-_Problem Statement: Find all purchase order for the ProductID = 512 that costs less than $35 unit price_
+**Problem Statement:** Find all purchase order for the ProductID = 512 that costs less than $35 unit price
 
 <pre>
 select * from Purchasing.PurchaseOrderDetail
@@ -187,7 +187,7 @@ select Name, ProductNumber, ListPrice from Production.Product
 
 ![](Images/10a.JPG)
 
-_Problem Statement: Find the name of products that has a list price in the range of $10-$20_
+**Problem Statement:** Find the name of products that has a list price in the range of $10-$20
 
 <pre>
 select Name, ProductNumber, ListPrice from Production.Product
@@ -202,9 +202,10 @@ where ListPrice BETWEEN 10 AND 20
 select * from Production.WorkOrder
   </pre>
 
-_Problem Statement: -- 1. Find records for Products with ProductID = 995  
--- 2. Find records for Products with ProductID = 995 that has more than 500 orders  
--- 3. Find records for Products with ProductID = 995 that has more than 500 orders and received before May 3, 2013_
+**Problem Statement:** 
+1. Find records for Products with ProductID = 995
+2. Find records for Products with ProductID = 995 that has more than 500 orders  
+3. Find records for Products with ProductID = 995 that has more than 500 orders and received before May 3, 2013
 
 <pre>
 select * from Production.WorkOrder
@@ -235,7 +236,7 @@ select Name, ListPrice from Production.Product
 
 ![](Images/12a.JPG)
 
-_Problem Statement: Find the name of products that has these 3 ListPrice values: 106.50, 1003.91, 333.42_
+**Problem Statement:** Find the name of products that has these 3 ListPrice values: 106.50, 1003.91, 333.42
 
 <pre>
 select Name, ListPrice from Production.Product
@@ -252,7 +253,7 @@ select * from Person.CountryRegion
 
 ![](Images/13a.JPG)
 
-_Problem Statement: Need to find the name of the countries that start with the letter 'V'_
+**Problem Statement:** Need to find the name of the countries that start with the letter 'V'
 
 <pre>
 select * from Person.CountryRegion
@@ -261,7 +262,7 @@ where Name like 'V%'
 
 ![](Images/13b.JPG)
 
-_Problem Statement: Need to find the name of the countries that start with the letter 'Vi'_
+**Problem Statement:** Need to find the name of the countries that start with the letter 'Vi'
 
 <pre>
 select * from Person.CountryRegion
@@ -278,7 +279,7 @@ select * from Production.WorkOrder
 
 ![](Images/14a.JPG)
 
-_Problem Statement: Find Work Orders that has a Scrap Reason_
+**Problem Statement:** Find Work Orders that has a Scrap Reason
 
 <pre>
 select * from Production.WorkOrder
@@ -293,7 +294,7 @@ where ScrapReasonID IS NOT NULL
 select * from Production.WorkOrder
   </pre>
 
-_Problem Statement: Find the Name of Products having more than 20,000 Order Quantity_
+**Problem Statement:** Find the Name of Products having more than 20,000 Order Quantity
 
 <pre>
 select ProductID from Production.WorkOrder
@@ -303,7 +304,7 @@ where OrderQty > 20000
 
 ![](Images/15a.JPG)
 
-_Name of Products from another Table_
+Name of Products from another Table
 
 <pre>
 select ProductID, Name from Production.Product  
@@ -329,8 +330,8 @@ select Name, ProductNumber from Production.Product
 
 ![](Images/16a.JPG)
 
-_Problem Statement: The "ProductNumber" has Characters in uppercase.   
-So, Covert characters in "Name" column also in uppercase_
+**Problem Statement:** The "ProductNumber" has Characters in uppercase.   
+So, Covert characters in "Name" column also in uppercase
 
 <pre>
 select UPPER(Name) AS Name, ProductNumber from Production.Product                         
@@ -338,7 +339,7 @@ select UPPER(Name) AS Name, ProductNumber from Production.Product
 
 ![](Images/16b.JPG)
 
-_Converting to "ProductNumber" lowercase characters_
+Converting to "ProductNumber" lowercase characters
 
 <pre>
 select Name, LOWER(ProductNumber) AS ProductNumber from Production.Product 
@@ -354,7 +355,7 @@ select Name, ProductNumber from Production.Product
 
 ![](Images/17a.JPG)
 
-_Problem Statement: Get(extract) only the 2 characters from the "ProductName" for each "Name" column_
+**Problem Statement:** Get(extract) only the 2 characters from the "ProductName" for each "Name" column
 
 <pre>
 select Name, LEFT(ProductNumber,2) AS ProductNumber from Production.Product                         
@@ -363,7 +364,7 @@ select Name, LEFT(ProductNumber,2) AS ProductNumber from Production.Product
 
 ![](Images/17b.JPG)
 
-_Problem Statement: Get(extract) only the 4 numbers from the "ProductName" for each "Name" column_
+**Problem Statement:** Get(extract) only the 4 numbers from the "ProductName" for each "Name" column
 
 <pre>
 select Name, RIGHT(ProductNumber,4) AS ProductNumber from Production.Product
@@ -380,7 +381,7 @@ select WorkOrderID, ProductID from Production.WorkOrder
 
 ![](Images/18a.JPG)
 
-_Problem Statement: Find the "Product Name" of each ProductID along the with the WorkOrderID_
+**Problem Statement:** Find the "Product Name" of each ProductID along the with the WorkOrderID
 
 <pre>
 select ProductID, Name from Production.Product                      
@@ -406,7 +407,7 @@ select ProductID, Name from Production.Product
 
 ![](Images/19a.JPG)
 
-_Problem Statement: Find the Sales Orders for all ProductID's along with the ProductID and Name_
+**Problem Statement:** Find the Sales Orders for all ProductID's along with the ProductID and Name
 
 <pre>
 select ProductID, SalesOrderID from Sales.SalesOrderDetail                     
@@ -440,7 +441,7 @@ select ProductID, Comments from Production.ProductReview
 
 ![](Images/20b.JPG)
 
-_Problem Statement: Find the reviews of products along with the product name (Right Join)_
+**Problem Statement:** Find the reviews of products along with the product name (Right Join)
 
 <pre>
 select B.ProductID, B.Comments, A.Name from Production.Product AS A
@@ -459,8 +460,8 @@ select ProductID, Name, ProductSubcategoryID from Production.Product
 
 ![](Images/21a.JPG)
 
-_Problem Statement: Find the Sub-category name to which each Product belongs, 
-and also find if any Sub-category name is not assigned to a Product name_
+**Problem Statement:** Find the Sub-category name to which each Product belongs, 
+and also find if any Sub-category name is not assigned to a Product name
 
 <pre>
 select ProductSubcategoryID, Name from Production.ProductSubcategory
@@ -486,7 +487,7 @@ select COUNT(ProductNumber) from Production.Product
 
 ![](Images/22a.JPG)
 
-_Problem Statement: Check how many product Numbers are there without any duplication_
+**Problem Statement:** Check how many product Numbers are there without any duplication
 
 <pre>
 select distinct COUNT(ProductNumber) from Production.Product
@@ -502,7 +503,7 @@ select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDet
 
 ![](Images/23a.JPG)
 
-_Problem Statement: Find the Total revenue from the Product 777 sold in the year 2011_
+**Problem Statement:** Find the Total revenue from the Product 777 sold in the year 2011
 
 <pre>
 select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
@@ -529,7 +530,7 @@ select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDet
 
 ![](Images/24a.JPG)
 
-_Problem Statement: Find the Average Price on which the Product 777 got sold in 2011_
+**Problem Statement:** Find the Average Price on which the Product 777 got sold in 2011
 
 <pre>
 select SalesOrderID, ProductID, LineTotal, ModifiedDate from Sales.SalesOrderDetail
@@ -549,7 +550,7 @@ and ModifiedDate BETWEEN '2011-01-01' AND '2011-12-31'
 ![](Images/24c.JPG)
 
 ### Scenario 25: Compute the lowest value  
-_Problem Statement: Check how many product Numbers are there without any duplication_
+**Problem Statement:** Check how many product Numbers are there without any duplication
 
 <pre>
 select * from Production.ProductInventory
@@ -566,7 +567,7 @@ where ProductID = 944
 ![](Images/25b.JPG)
 
 ### Scenario 26: Compute the largest value   
-_Problem Statement: Find the largest quantity in stock for the ProductID 747_
+**Problem Statement:** Find the largest quantity in stock for the ProductID 747
 
 <pre>
 select * from Production.ProductInventory
@@ -590,8 +591,8 @@ select StateProvinceID, StateProvinceCode, Name from Person.StateProvince
 
 ![](Images/27a.JPG)
 
-_Problem Statement: Display State Code and State Name in this format: State Code-State Name.
-Example: for State Code-AK and State Name- Alaska, need to display as 'Ak-Alaska'_
+**Problem Statement:** Display State Code and State Name in this format: State Code-State Name.
+Example: for State Code-AK and State Name- Alaska, need to display as 'Ak-Alaska'
 
 <pre>
 select StateProvinceID, CONCAT(StateProvinceCode, '-', Name) from Person.StateProvince
@@ -614,7 +615,7 @@ select ProductID, UnitPrice, OrderQty, LineTotal, RejectedQty from Purchasing.Pu
 
 ![](Images/28a.JPG)
 
-_Problem Statement: Find the Amount lost due to the rejected quantity_
+**Problem Statement:** Find the Amount lost due to the rejected quantity
 
 <pre>
 select ProductID,
@@ -636,7 +637,7 @@ select ProductID, Quantity from Production.ProductInventory
 
 ![](Images/29a.JPG)
 
-_Problem Statement: Find the lowest Quantity for each ProductID in the Inventory_
+**Problem Statement:** Find the lowest Quantity for each ProductID in the Inventory
 
 <pre>
 select ProductID, MIN(Quantity) AS MinQuantity from Production.ProductInventory
@@ -653,8 +654,8 @@ select ProductID, Quantity, LocationID from Production.ProductInventory
 
 ![](Images/30a.JPG)
 
-_Problem Statement: If the location 'LocationID' is less than 3 for a ProductID,
-then we need to find the lowest stock quantity 'Quantity' for only that ProductID_
+**Problem Statement:** If the location 'LocationID' is less than 3 for a ProductID,
+then we need to find the lowest stock quantity 'Quantity' for only that ProductID
 
 <pre>
 select ProductID,
