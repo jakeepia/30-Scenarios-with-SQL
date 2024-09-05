@@ -7,7 +7,7 @@ As a data analyst, SQL (Structured Query Language) is an essential tool for mana
 
 **Sample Database:** _AdventureWorks2017.bak_ 
 
-**Tool:** _Azure Data Studio was connected to Microsoft SQL Server_
+**Tool:** _Azure Data Studio was connected to Microsoft SQL Server by launching the application, selecting "New Connection" to open the Connection pane, and entering the necessary server details and authentication credentials to establish the connection_
 
 These scenarios can range from simple data retrieval to complex data transformations and aggregations. Here are 30 scenario SQL cases that you may come across in your job:
 
