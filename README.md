@@ -47,7 +47,7 @@ order by len(Comments) DESC
 select TransactionID, ProductID, TransactionDate, TransactionType  
 from Production.TransactionHistory 
   </pre>
---113,443 rows returned * 10% = 11,345
+-- 113,443 rows returned * 10% = 11,345
 
 ![](Images/3a.JPG)
 
@@ -58,7 +58,7 @@ select Top 10 percent
 TransactionID, ProductID, TransactionDate, TransactionType  
 from Production.TransactionHistory
   </pre>
---11,345 rows returned
+-- 11,345 rows returned
 
 ![](Images/3b.JPG)
 
@@ -300,16 +300,16 @@ select * from Production.WorkOrder
 select ProductID from Production.WorkOrder
 where OrderQty > 20000                          
   </pre>
-  --Query 1
+-- Query 1
 
 ![](Images/15a.JPG)
 
-Name of Products from another Table
+-- Name of Products from another Table
 
 <pre>
 select ProductID, Name from Production.Product  
   </pre>
-  --Query 2
+-- Query 2
 
 <pre>
 select ProductID, Name from Production.Product
@@ -318,7 +318,7 @@ where ProductID = ANY(
 where OrderQty > 20000     
 )                                                                        
   </pre>
-  --Query 1 inside Query 2
+-- Query 1 inside Query 2
 
 ![](Images/15b.JPG)
 
@@ -339,7 +339,7 @@ select UPPER(Name) AS Name, ProductNumber from Production.Product
 
 ![](Images/16b.JPG)
 
-Converting to "ProductNumber" lowercase characters
+-- Converting to "ProductNumber" lowercase characters
 
 <pre>
 select Name, LOWER(ProductNumber) AS ProductNumber from Production.Product 
@@ -669,6 +669,5 @@ HAVING COUNT(LocationID) < 3
 ![](Images/30b.JPG)
 
 ## Conclusion
-In conclusion, SQL is a powerful tool for data analysts to manage and analyze data. By mastering SQL and understanding various scenarios, data analysts can efficiently retrieve, manipulate, and transform data to derive valuable insights. Whether it is querying databases, aggregating data, or performing complex calculations, SQL provides the necessary capabilities to handle diverse data analysis tasks.  
-By continuously honing their SQL skills, data analysts can become more proficient in their work and contribute to making informed business decisions based on data-driven insights.
+SQL is a powerful tool for data analysts to manage and analyze data. By mastering SQL and understanding various scenarios, data analysts can efficiently retrieve, manipulate, and transform data to derive valuable insights. Whether it is querying databases, aggregating data, or performing complex calculations, SQL provides the necessary capabilities to handle diverse data analysis tasks.  
 
