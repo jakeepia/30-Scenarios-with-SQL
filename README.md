@@ -5,9 +5,9 @@
 ## Introduction
 As a data analyst, **SQL** (Structured Query Language) is an essential tool for managing and analyzing data. SQL allows data analysts to retrieve, manipulate, and transform data stored in databases. In this project, I will explore some common SQL scenarios that data analysts frequently encounter in their work. By understanding these scenarios, data analysts can effectively utilize SQL to extract valuable insights from large datasets and make data-driven decisions. 
 
-**Sample Database:** _AdventureWorks2017.bak_ 
+**Sample Database:** AdventureWorks2017.bak
 
-**Tool:** _Azure Data Studio was connected to Microsoft SQL Server by launching the application, selecting "New Connection" to open the Connection pane, and entering the necessary server details and authentication credentials to establish the connection_
+**Tool:** Azure Data Studio was connected to Microsoft SQL Server by launching the application, selecting "New Connection" to open the Connection pane, and entering the necessary server details and authentication credentials to establish the connection
 
 These scenarios can range from simple data retrieval to complex data transformations and aggregations. Here are 30 scenario SQL cases that you may come across in your job.
 
